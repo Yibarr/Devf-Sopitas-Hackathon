@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors =  require('cors')
+const ngrok = require('ngrok');
 const app = express()
 const port = process.env.PORT || 5000
 
@@ -31,3 +32,8 @@ app.listen(port, (err) => {
     console.log(err)
   }
 })
+
+(async function () {
+  const url = await ngrok.connect(port);
+  console.log(url);
+})();

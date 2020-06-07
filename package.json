@@ -25,8 +25,11 @@
   "homepage": "https://github.com/Yibarr/Devf-Sopitas-Hackathon#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dialogflow": "^1.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "ngrok": "^3.2.7",
+    "node-fetch": "^2.6.0",
     "pg": "^8.2.1"
   },
   "devDependencies": {
