@@ -2,10 +2,10 @@
   "name": "devf-sopitas-hackathon",
   "version": "1.0.0",
   "description": "HACKATHON-API",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./api/index.js",
-    "dev": "nodemon ./api/index.js",
+    "start": "node ./api/server.js",
+    "dev": "nodemon ./api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,9 +24,12 @@
   },
   "homepage": "https://github.com/Yibarr/Devf-Sopitas-Hackathon#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.4",
     "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
