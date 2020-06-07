@@ -14,13 +14,13 @@ pool.on('error', (err, client) => {
 })
 
 module.exports = {
-  query: (text, params, callback) => {
+  query: async (text, params, callback) => {
     const start = Date.now()
-    return pool.query(text, params, (err, res) => {
-      const duration = Date.now() - start
-      console.log('executed query', { text, duration, rows: res.rowCount })
-      callback(err, res)
-    })
+    const duration = Date.now() - start
+    console.log('executed query', { text, duration })
+    const response = await pool.query(text, params)
+    console.log(response)
+    return callback(response)
   },
   getClient: (callback) => {
     pool.connect((err, client, done) => {
@@ -38,7 +38,7 @@ module.exports = {
         clearTimeout(timeout)
         client.query = query
       }
-      callback(err, client, release)
+     return callback(err, client, release)
     })
   }
 }

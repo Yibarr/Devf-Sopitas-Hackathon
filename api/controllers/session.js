@@ -1,3 +1,4 @@
+const { getDate } = require('../services/session')
 
 const getSessionById = async (req, res) => {
   try {
@@ -6,8 +7,9 @@ const getSessionById = async (req, res) => {
     if (!params.id) {
       throw new Error('Oye veniste sin id')
     }
-
-    res.send(session)
+    const date = await getDate(params.id)
+    console.log(date)
+    res.send(date)
   } catch (error) {
     res.send({error: error.message})
   }
