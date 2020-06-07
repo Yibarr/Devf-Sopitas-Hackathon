@@ -1,14 +1,10 @@
 const client = require('../db')
 
-const getDate = async (id) => {
+const getDate = async () => {
   try {
-    const query = await client.query('SELECT NOW() ',[id], (err, res) => {
-      if (err) {
-        console.error(err)
-      }
-      console.log(err)
-      return res
-    })
+    const query = await client.query('SELECT DATE_NOW() ')
+    
+    console.log(query)
     return query
   } catch (error) {
     throw new Error(error.message)

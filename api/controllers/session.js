@@ -7,7 +7,7 @@ const getSessionById = async (req, res) => {
     if (!params.id) {
       throw new Error('Oye veniste sin id')
     }
-    const date = await getDate(params.id)
+    const date = await getDate()
     console.log(date)
     res.send(date)
   } catch (error) {
